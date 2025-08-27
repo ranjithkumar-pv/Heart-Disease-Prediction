@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+/* Reset styles for consistency */
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('../static/res_bg.png'); /* Update the path as needed */
+    background-size: cover; /* Ensures the background image fits the screen */
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+    color: rgb(240, 240, 240);
+    overflow: hidden;
+    height: 100vh; /* Ensures the body takes full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Adjust alignment */
+    align-items: center;
+    text-align: center; /* Aligns text horizontally */
+    padding: 20px;
+}
+
+.head_txt h1 {
+    font-size: 28px; /* Adjusted for better readability */
+    margin-top: 50px;
+    margin-bottom: 20px; /* Space between title and prediction */
+}
+
+.desc h2 {
+    font-size: 24px; /* Reduced size for better balance */
+    margin-bottom: 90px; /* Space between prediction and paragraph */
+}
+
+.note p {
+    font-size: 18px; /* Slightly smaller for secondary information */
+    bottom: 150px; /* Pushes the paragraph to the bottom of the screen */
+    max-width: 80%; /* Prevents overly long lines on wide screens */
+    line-height: 1.5; /* Improves readability */
+
+}
+p{
+    margin-left:130px;
+    margin-top: 130px;
+
+}
+</style>
+</head>
+<body>
+    <div class="head_txt">
+        <h1>Analysis Report</h1>
+    </div>
+    <div class="desc">
+        <h2>{{prediction_text1}}</h2>
+    </div>
+    <div class="note">
+        <p>Note: The results presented are based on predictive modeling and should not be considered entirely accurate.</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <title>Heart Check AI</title>
+</head>
+<body>
+    <div class="title">
+        <h1 class="title_txt">Heart Disease <span class="title_txt1">Prediction</span></h1>
+    </div>
+    
+    <div class="desc">
+        <h2 class="desc1">Early Detection, Smarter Prevention!</h2>
+    </div>
+    <div class="heart">
+        <img class="heart_pic" src="../static/heart.png" alt="heart">
+    </div>
+    <div class="line">
+        <img class="heart_line" src="../static/heart_line.png" alt="heart line">
+    </div>
+    <div class="robohand">
+        <img class="hand_pic" src="../static/robo hand.png" alt="Robo hand">
+    </div>
+
+    <div class="container">
+        <div class="headline">
+            <h3 class="head_txt">Enter Patient Details</h3>
+        </div>
+        <div class="form">
+            <form action="{{ url_for('predict') }}" method="post">
+                <div class="name_details">
+
+                    <!-- Age -->
+                    <div class="input_group">
+                        <h4 class="detail">Age</h4>
+                        <input class="inputbox" type="number" name="Age" min="20" max="100" required>
+                    </div>
+
+                    <!-- Sex -->
+                    <div class="input_group">
+                        <h4 class="detail">Sex</h4>
+                        <select class="inputbox" name="Sex" required>
+                            <option value="1">Male</option>
+                            <option value="0">Female</option>
+                        </select>
+                    </div>
+
+                    <!-- ChestPainType -->
+                    <div class="input_group">
+                        <h4 class="detail">Chest Pain Type</h4>
+                        <select class="inputbox" name="ChestPainType" required>
+                            <option value="0">Atypical Angina</option>
+                            <option value="1">Non-anginal Pain</option>
+                            <option value="2">Asymptomatic</option>
+                            <option value="3">Typical Angina</option>
+                        </select>
+                    </div>
+
+                    <!-- RestingBP -->
+                    <div class="input_group">
+                        <h4 class="detail">Resting BP (mm Hg)</h4>
+                        <input class="inputbox" type="number" name="RestingBP" min="80" max="200" required>
+                    </div>
+
+                    <!-- Cholesterol -->
+                    <div class="input_group">
+                        <h4 class="detail">Cholesterol (mg/dl)</h4>
+                        <input class="inputbox" type="number" name="Cholesterol" min="100" max="600" required>
+                    </div>
+
+                    <!-- FastingBS -->
+                    <div class="input_group">
+                        <h4 class="detail">Fasting Blood Sugar &gt; 120 mg/dl</h4>
+                        <select class="inputbox" name="FastingBS" required>
+                            <option value="0">No</option>
+                            <option value="1">Yes</option>
+                        </select>
+                    </div>
+
+                    <!-- RestingECG -->
+                    <div class="input_group">
+                        <h4 class="detail">Resting ECG</h4>
+                        <select class="inputbox" name="RestingECG" required>
+                            <option value="0">Normal</option>
+                            <option value="1">ST-T Abnormality</option>
+                            <option value="2">Left Ventricular Hypertrophy</option>
+                        </select>
+                    </div>
+
+                    <!-- MaxHR -->
+                    <div class="input_group">
+                        <h4 class="detail">Max Heart Rate</h4>
+                        <input class="inputbox" type="number" name="MaxHR" min="60" max="220" required>
+                    </div>
+
+                    <!-- Exercise Angina -->
+                    <div class="input_group">
+                        <h4 class="detail">Exercise Angina</h4>
+                        <select class="inputbox" name="ExerciseAngina" required>
+                            <option value="0">No</option>
+                            <option value="1">Yes</option>
+                        </select>
+                    </div>
+
+                    <!-- Oldpeak -->
+                    <div class="input_group">
+                        <h4 class="detail">Oldpeak (ST Depression)</h4>
+                        <input class="inputbox" type="number" name="Oldpeak" step="0.1" min="0" max="10" required>
+                    </div>
+
+                    <!-- ST_Slope -->
+                    <div class="input_group">
+                        <h4 class="detail">ST Slope</h4>
+                        <select class="inputbox" name="ST_Slope" required>
+                            <option value="0">Upsloping</option>
+                            <option value="1">Flat</option>
+                            <option value="2">Downsloping</option>
+                        </select>
+                    </div>
+
+                </div>
+                <button type="submit" class="button">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
